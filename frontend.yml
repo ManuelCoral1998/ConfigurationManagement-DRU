@@ -1,0 +1,23 @@
+- hosts: frontend
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  tasks:
+#    - name: "Export env variable"
+#      lineinfile: 
+#        path: /etc/environment
+#        line: export BACK_HOST=192.168.56.3
+
+    - name: "Clone frontend repository"
+      git:
+        repo   : "{{ movie_analyst_ui_repo }}"
+        update : yes
+        dest   : /home/app
+
+    - name: "install npm dependencies"
+      npm:
+        path: /home/app/movie-analyst-ui
+    
+    - name: "Deploy and start frontend server"
+      shell: tmux new-session -d -s "front" node /home/app/movie-analyst-ui/server.js
