@@ -1,5 +1,5 @@
-[frontend]
+[ui]
 Frontend        ansible_connection=local
 
-[backend]
+[api]
 Backend         ansible_connection=local

@@ -1,4 +1,4 @@
-- hosts: frontend
+- hosts: ui
   become: yes
   become_user: root
   become_method: sudo
