@@ -41,7 +41,7 @@
         - mysql-client
     
     - name: "Populate DB using mysql-client"
-      shell: mysql -u $DB_USER -p$DB_PASS -h $DB_HOST < /home/app/movie-analyst-api/data_model/table_creation_and_inserts.sql
+      shell: mysql -u $DB_USER -p$DB_PASS -h $DB_HOST -P $DB_PORT < /home/app/movie-analyst-api/data_model/table_creation_and_inserts.sql
     
     - name: "Deploy and start frontend server"
       shell: tmux new-session -d -s "back" node /home/app/movie-analyst-api/server.js
