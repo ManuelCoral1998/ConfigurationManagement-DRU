@@ -40,6 +40,9 @@
         - mysql-client-core-5.7
         - mysql-client
     
+    - name: "Echoing"
+      shell: echo $DB_USER - $DB_PASS - $DB_HOST - $DB_PORT
+
     - name: "Populate DB using mysql-client"
       shell: mysql -u $DB_USER -p$DB_PASS -h $DB_HOST -P $DB_PORT < /home/app/movie-analyst-api/data_model/table_creation_and_inserts.sql
     
