@@ -1,10 +1,5 @@
 - hosts: ui
   tasks:
-#    - name: "Export env variable"
-#      lineinfile: 
-#        path: /etc/environment
-#        line: export BACK_HOST=192.168.56.3
-
     - name: "Clone frontend repository"
       git:
         repo   : "{{ movie_analyst_ui_repo }}"

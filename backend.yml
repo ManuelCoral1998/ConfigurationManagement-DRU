@@ -1,25 +1,5 @@
 - hosts: api
   tasks:
-#    - name: "Export env variable"
-#      lineinfile: 
-#        path: /etc/environment
-#        line: export DB_HOST=192.168.56.10
-    
-#    - name: "Export another env"
-#      lineinfile:
-#        path: /etc/environment
-#        line: export DB_USER=root
-
-#    - name: "Export anotherfd env"
-#      lineinfile:
-#        path: /etc/environment
-#        line: export DB_PASS=F&Bb7_T!$RNkgMKn
-    
-#    - name: "Export anothefr env"
-#      lineinfile:
-#        path: /etc/environment
-#        line: export DB_NAME=movie_db
-
     - name: "Clone frontend repository"
       git:
         repo   : "{{ movie_analyst_api_repo }}"
@@ -46,3 +26,7 @@
       shell: node /home/app/movie-analyst-api/server.js > server_log.log ?> server_err.log &
       environment:
         PORT: '{{ port }}'
+        DB_HOST: '{{ db_host }}'
+        DB_USER: '{{ db_user }}'
+        DB_PASS: '{{ db_pass }}'
+        DB_NAME: '{{ db_name }}'
