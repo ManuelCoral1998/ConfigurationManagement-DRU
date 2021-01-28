@@ -1,7 +1,2 @@
 ---
 movie_analyst_api_repo: https://github.com/ManuelCoral1998/BackEnd-DRU.git
-db_name: movie_db
-db_user: applicationuser
-db_pass: applicationuser
-port: 3000
-db_host: $DB_HOST
