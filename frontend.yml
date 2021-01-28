@@ -1,8 +1,4 @@
 - hosts: ui
-  become: yes
-  become_user: root
-  become_method: sudo
-
   tasks:
 #    - name: "Export env variable"
 #      lineinfile: 
