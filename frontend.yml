@@ -17,3 +17,5 @@
     
     - name: "Deploy and start frontend server"
       shell: tmux new-session -d -s "front" node /home/app/movie-analyst-ui/server.js
+      environment:
+        BACK_HOST: '{{ back_host }}'
