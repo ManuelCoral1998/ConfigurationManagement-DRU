@@ -1,3 +1,7 @@
+# Para este proyecto fue necesario pasar las variables de entorno como variables extras'{{ db_host }}'
+# '{{ db_user }}' '{{ db_pass }}'
+# Esto se debe a que muy probablemente las variables de entorno no habian sido exportadas cuando se
+# ejecutaba el ansible playbook
 - hosts: api
   tasks:
     - name: "Clone frontend repository"
