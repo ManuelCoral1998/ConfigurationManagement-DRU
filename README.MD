@@ -21,5 +21,12 @@ We are going to find the changes necessary to use the Dynamic Inventory.
 
 ## Changes  
 
-In the *.yml is necessary to change hosts (target)
+In the *.yml is necessary to change hosts (target)  
 
+## Extra
+
+1. Ansible to provision two machines/instances using regular variables, extra variables and setting environment vars.
+
+[Using Variables — Ansible Documentation](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html)
+
+[And setting environment variables in stages](https://docs.ansible.com/ansible/latest/user_guide/playbooks_environment.html)
