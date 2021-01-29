@@ -1,4 +1,4 @@
-- hosts: tag_responsible_Manuel_CoralL
+- hosts: <YOUR_TAG>
   become: yes
   become_user: root
   become_method: sudo

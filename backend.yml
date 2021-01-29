@@ -2,7 +2,7 @@
 # '{{ db_user }}' '{{ db_pass }}'
 # Esto se debe a que muy probablemente las variables de entorno no habian sido exportadas cuando se
 # ejecutaba el ansible playbook
-- hosts: api
+- hosts: <YOUR_TAG>
   become: yes
   become_user: root
   become_method: sudo
