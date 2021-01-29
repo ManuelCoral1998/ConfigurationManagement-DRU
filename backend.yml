@@ -3,6 +3,10 @@
 # Esto se debe a que muy probablemente las variables de entorno no habian sido exportadas cuando se
 # ejecutaba el ansible playbook
 - hosts: api
+  become: yes
+  become_user: root
+  become_method: sudo
+  
   tasks:
     - name: "Clone frontend repository"
       git:
