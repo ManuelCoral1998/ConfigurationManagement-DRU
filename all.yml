@@ -1,4 +1,8 @@
-- hosts: all
+- hosts: tag_responsible_Manuel_CoralL
+  become: yes
+  become_user: root
+  become_method: sudo
+  
   tasks:
     - name: install git
       apt:
