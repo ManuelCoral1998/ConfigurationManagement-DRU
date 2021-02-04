@@ -1,4 +1,4 @@
-- hosts: ui
+- hosts: api
   become: yes
   become_user: root
   become_method: sudo
@@ -6,7 +6,7 @@
   tasks:
     - name: get info on frontend container
       docker_container_info:
-        name: appFront
+        name: appBack
       register: result
 
     - name: Does container exists?
@@ -15,28 +15,32 @@
 
     - name: Stop container
       docker_container:
-        name: appFront
+        name: appBack
         state: stopped
       when: result.exists
 
     - name: remove container
       docker_container:
-        name: appFront
+        name: appBack
         state: absent
 
     - name: remove image
       docker_image:
         state: absent
-        name: appFront
+        name: appBack
         tag: 3
     
     - name: Execute docker container
       docker_container:
         name: 
-        image: manuel11coral23/my-node-js-frontend-image:3
+        image: manuel11coral23/my-node-js-backend-image:61
         state: started
         pull: true
         published_ports:
           - "3030:3030"
         env: 
-          BACK_HOST: '{{ back_host }}'
+          PORT: '{{ port }}'
+          DB_HOST: '{{ db_host }}'
+          DB_USER: '{{ db_user }}'
+          DB_PASS: '{{ db_pass }}'
+          DB_NAME: '{{ db_name }}'
