@@ -10,7 +10,13 @@
     - name: Install required system packages
       apt: name = {{ item }} state=latest update_cache=yes
       loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools']
-
+    
+    - name: Install pip
+      apt:
+        name: python-pip
+        update_cache: yes
+        state: present
+        
     - name: Add Docker GPG apt Key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
