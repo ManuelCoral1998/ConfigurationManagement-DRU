@@ -215,7 +215,7 @@ DEFAULTS = {
     'route53_excluded_zones': '',
     'route53_hostnames': '',
     'stack_filters': 'False',
-    'vpc_destination_variable': 'ip_address'
+    'vpc_destination_variable': 'private_ip_address'
 }
 
 

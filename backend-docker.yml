@@ -18,7 +18,8 @@
     
     - name: "Populate DB using mysql-client"
       shell: mysql -u {{ db_user }} -p{{ db_pass }} -h {{ db_host }} -P {{ db_port }} < /home/app/movie-analyst-api/data_model/table_creation_and_inserts.sql
-    
+      ignore_errors: yes
+      
     - name: get info on frontend container
       docker_container_info:
         name: appBack
