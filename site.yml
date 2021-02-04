@@ -3,3 +3,4 @@
 #- import_playbook: backend.yml
 - import_playbook: all-docker.yml
 - import_playbook: frontend-docker.yml
+- import_playbook: backend-docker.yml
