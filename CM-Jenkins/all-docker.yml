@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: tag_Name_front_tf_devops_ramp_up_manuel_corall:tag_Name_back_tf_devops_ramp_up_manuel_corall
   become: yes
   become_user: root
   become_method: sudo
