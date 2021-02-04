@@ -1,0 +1,32 @@
+- hosts: frontend
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  tasks:
+    
+    - name: Stop container
+      docker_container:
+        name: appFront
+        state: stopped
+
+    - name: remove image
+      docker_image:
+        state: absent
+        name: appFront
+        tag: 3
+
+    - name: pull front image
+      docker_image:
+        name: manuel11coral23/my-node-js-front-image
+    
+    - name: "application"
+      docker_container:
+        name: 
+        image: manuel11coral23/my-node-js-frontend-image
+        state: reloaded
+        pull: always
+        ports:
+        - "3030:3030"
+        env: 
+          BACK_HOST: '{{ back_host }}'
