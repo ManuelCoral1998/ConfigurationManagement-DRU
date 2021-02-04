@@ -4,6 +4,21 @@
   become_method: sudo
 
   tasks:
+    - name: "Clone frontend repository"
+      git:
+        repo   : "{{ movie_analyst_api_repo }}"
+        update : yes
+        dest   : /home/app
+    
+    - name: "Install MySQL packages"
+      apt: pkg={{ item }} state=present
+      with_items:
+        - mysql-client-core-5.7
+        - mysql-client
+    
+    - name: "Populate DB using mysql-client"
+      shell: mysql -u {{ db_user }} -p{{ db_pass }} -h {{ db_host }} -P {{ db_port }} < /home/app/movie-analyst-api/data_model/table_creation_and_inserts.sql
+    
     - name: get info on frontend container
       docker_container_info:
         name: appBack
