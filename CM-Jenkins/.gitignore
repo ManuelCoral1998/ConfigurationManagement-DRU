@@ -1,0 +1,3 @@
+inventory/ec2.py
+inventory/ec2.ini
+inventory/pem/manuel-corall-ramp-up-devops.pem
