@@ -28,12 +28,11 @@
       docker_image:
         state: absent
         name: appFront
-        tag: 3
     
     - name: Execute docker container
       docker_container:
         name: appFront
-        image: manuel11coral23/my-node-js-frontend-image:3
+        image: manuel11coral23/my-node-js-frontend-image:{{ tag }}
         state: started
         pull: true
         published_ports:

@@ -28,12 +28,11 @@
       docker_image:
         state: absent
         name: appBack
-        tag: 3
     
     - name: Execute docker container
       docker_container:
         name: appBack
-        image: manuel11coral23/my-node-js-backend-image:61
+        image: manuel11coral23/my-node-js-backend-image:{{ tag }}
         state: started
         pull: true
         published_ports:
