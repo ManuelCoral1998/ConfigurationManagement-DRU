@@ -39,3 +39,12 @@
           - "3030:3030"
         env: 
           BACK_HOST: '{{ back_host }}'
+
+    - name: Get container IP
+      set_fact:
+        container_ip: "{{ my_service_status.ansible_facts.docker_container.NetworkSettings.IPAddress }}"
+
+    - name: Check container
+      wait_for:
+        host: "{{ container_ip }}"
+        port: 3030
