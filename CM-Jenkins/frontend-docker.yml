@@ -40,7 +40,7 @@
           - "3030:3030"
         env: 
           BACK_HOST: '{{ back_host }}'
-      regiters: my_service_status
+      regiter: my_service_status
 
     - name: Get container IP
       set_fact:
