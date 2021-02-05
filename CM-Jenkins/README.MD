@@ -5,3 +5,5 @@
 [Using Variables — Ansible Documentation](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html)
 
 [And setting environment variables in stages](https://docs.ansible.com/ansible/latest/user_guide/playbooks_environment.html)
+
+2. Provision 
