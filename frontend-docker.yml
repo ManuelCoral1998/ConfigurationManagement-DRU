@@ -33,7 +33,7 @@
     - name: Execute docker container
       docker_container:
         name: appFront
-        image: manuel11coral23/my-node-js-frontend-image:3
+        image: manuel11coral23/my-node-js-frontend-image:19
         state: started
         pull: true
         published_ports:
